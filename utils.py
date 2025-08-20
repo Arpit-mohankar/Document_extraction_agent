@@ -1,23 +1,18 @@
-import cv2
 import numpy as np
 from PIL import Image
 import base64
 import io
 
 def preprocess_image(image: np.ndarray) -> np.ndarray:
-    """Basic image preprocessing for better OCR"""
+    """Basic image preprocessing without OpenCV"""
+    # Simple grayscale conversion using PIL instead of OpenCV
     if len(image.shape) == 3:
-        gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    else:
-        gray = image
-    
-    # Denoise
-    denoised = cv2.fastNlMeansDenoising(gray)
-    
-    # Threshold
-    thresh = cv2.threshold(denoised, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-    
-    return thresh
+        # Convert to PIL Image for processing
+        pil_image = Image.fromarray(image)
+        # Convert to grayscale
+        gray_image = pil_image.convert('L')
+        return np.array(gray_image)
+    return image
 
 def image_to_base64(image: Image.Image) -> str:
     """Convert PIL image to base64 string"""
