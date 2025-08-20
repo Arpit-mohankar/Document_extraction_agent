@@ -63,7 +63,7 @@ This makes it a robust system for automating document understanding and data ent
 
 1. **Clone the repository**
 ```bash
-git clone <repository_url>
+git clone https://github.com/Arpit-mohankar/Document_extraction_agent
 cd <project_directory>
 ```
 2.Create and activate a virtual environment
