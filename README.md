@@ -59,20 +59,34 @@ This makes it a robust system for automating document understanding and data ent
 - OpenAI API Key 
 - OCR API Key 
 
-### Installation
-Clone the repository:
+## ⚙️ Installation
+
+1. **Clone the repository**
 ```bash
 git clone <repository_url>
 cd <project_directory>
+```
+2.Create and activate a virtual environment
+```
 python -m venv venv
 # On Linux/Mac
 source venv/bin/activate
 # On Windows
 venv\Scripts\activate
-
+ 
+```
+3.Install dependencies
+```
 pip install -r requirements.txt
+```
+4.Set up environment variables
+Create a .env file in the project root and add your keys:
+```
 OPENAI_API_KEY=your_openai_api_key_here
 OCR_SPACE_API_KEY=your_ocr_space_api_key_here
+```
+5.Run the application
+```
 streamlit run main.py
 ```
 🤝 Contributing
@@ -85,4 +99,5 @@ Tests are included for new features
 📧 Contact
 
 Maintainer: [Arpit Mohankar]
+
 Email: [arpitmohankar24@gmail.com]
